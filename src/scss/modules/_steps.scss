@@ -1,28 +1,19 @@
-.scroll-section {
+.steps-scroll-section {
   height: 200vh;
   position: relative;
 }
 
-.image-container {
+.steps-image-container {
   position: sticky;
   top: 50%;
   transform: translateY(-50%);
   width: 100%;
 }
 
-// .animated-image {
-//   width: 250px;
-//   height: 250px;
-//   background-size: cover;
-//   background-position: center;
-//   background-color: red;
-//   background-image: url("/src/img/step_0000.webp");
-// }
-
-.animated-image {
+.steps-animated-image {
   width: 250px;
   height: 250px;
-  background-image: url("/src/img/step_0000.webp");
   background-size: cover;
   background-position: center;
+  background-image: url("../img/step_0000.webp");
 }

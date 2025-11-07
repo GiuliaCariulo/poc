@@ -1,0 +1,34 @@
+.parallax {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.parallax-square {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 16px;
+  opacity: 0.9;
+}
+
+.parallax-square-one {
+  background-color: #ff5252;
+  top: 30%;
+  left: 30%;
+}
+
+.parallax-square-two {
+  background-color: #42a5f5;
+  top: 30%;
+  right: 10%;
+}
+
+.parallax-square-three {
+  background-color: #66bb6a;
+  top: 30%;
+  left: 50%;
+}

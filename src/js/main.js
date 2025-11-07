@@ -1,28 +1,27 @@
 gsap.registerPlugin(ScrollTrigger);
 
-const image = document.querySelector(".animated-image");
+// ___________________________________________
+// Scroll animation
+// ___________________________________________
 
+const image = document.querySelector(".steps-animated-image");
 const images = [
-  "img/step_0000.webp=1",
-  "img/step_0001.webp=2",
-  "img/step_0002.webp=3",
-  "img/step_0003.webp",
-  "img/step_0004.webp",
-  "img/step_0005.webp",
-  "img/step_0006.webp",
-  "img/step_0007.webp",
-  "img/step_0008.webp",
-  "img/step_0009.webp",
-  "img/step_0010.webp",
-  "img/step_0011.webp",
-  "img/step_0012.webp",
+  "img/step_0001.webp/400/400?=1",
+  "https://picsum.photos/400/400?random=1",
+  "https://picsum.photos/400/400?random=2",
+  "https://picsum.photos/400/400?random=3",
+  "https://picsum.photos/400/400?random=4",
+  "https://picsum.photos/400/400?random=5",
+  "https://picsum.photos/400/400?random=6",
+  "https://picsum.photos/400/400?random=7",
+  "https://picsum.photos/400/400?random=8",
 ];
 
-gsap.to(".animated-image", {
+gsap.to(".steps-animated-image", {
   x: () => window.innerWidth - 250,
 
   scrollTrigger: {
-    trigger: ".scroll-section",
+    trigger: ".steps-scroll-section",
     start: "top center",
     end: "bottom center",
     scrub: 1,
@@ -31,5 +30,64 @@ gsap.to(".animated-image", {
       const imageIndex = Math.floor(progress * (images.length - 1));
       image.style.backgroundImage = `url('${images[imageIndex]}')`;
     },
+  },
+});
+
+// ___________________________________________
+// Scroll horizontal
+// ___________________________________________
+
+const horizontalScroll = document.querySelector(".scroll-horizontal");
+const scrollWidth = horizontalScroll.scrollWidth - window.innerWidth;
+
+gsap.to(horizontalScroll, {
+  x: -scrollWidth,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".scroll-container",
+    start: "top top",
+    end: () => `+=${scrollWidth}`,
+    scrub: 1,
+    pin: true,
+    anticipatePin: 1,
+  },
+});
+
+// ___________________________________________
+// Parallax
+// ___________________________________________
+
+gsap.to(".parallax-square-one", {
+  y: -250,
+  x: -300,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".parallax",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+gsap.to(".parallax-square-two", {
+  y: -400,
+  x: 200,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".parallax",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+  },
+});
+
+gsap.to(".parallax-square-three", {
+  y: 400,
+  ease: "none",
+  scrollTrigger: {
+    trigger: ".parallax",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
   },
 });
