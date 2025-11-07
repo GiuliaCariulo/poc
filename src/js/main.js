@@ -2,6 +2,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 // ___________________________________________
 // Scroll animation
+// Nous rencontrons des problèmes pour changer les images random en nos images.
+// Nous avons testé plusieurs tutos mais avons besoin de voir avec Mme.Wolfisberg pour améliorer ce détail.
 // ___________________________________________
 
 const image = document.querySelector(".steps-animated-image");
